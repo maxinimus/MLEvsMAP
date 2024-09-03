@@ -1,8 +1,9 @@
 import numpy as np
+from src import MLE_model, MAP_model
 
-def run_simulation(a,b,theta):
+def run_experiments(a,b,theta):
     """
-    Runs the simulation for MLE and MAP estimation of a coin's bias.
+    Returns experiments for MLE and MAP estimation of a coin's bias.
 
     Parameters: 
     a (float): Prior Beta distribution parameter.
@@ -10,7 +11,9 @@ def run_simulation(a,b,theta):
     theta (float): True bias of the coin.
 
     Returns:
-    None
+    toss_counts (list): Number of coin tosses for each experiment.
+    mle_estimates (list): MLE estimates for given theta.
+    map_estimates (list): MAP estimates for given theta and prior.
     """
 
     # Sample number of tosses

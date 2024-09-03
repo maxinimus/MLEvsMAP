@@ -1,4 +1,3 @@
-#from .model import MyModel
-#from .utils import utility_function
+from .model import MLE_model, MAP_model
 
-#__all__ = ['MyModel', 'utility_function']
+__all__ = ['MLE_model', 'MAP_model']

@@ -4,7 +4,6 @@ import scipy.stats as stats
 
 from .utils import validate_coin_tosses
 
-# MLE model
 def MLE_model(n, h):
     """
     Maximum Likelihood Estimation (MLE) model for the number of coin tosses.
@@ -23,7 +22,6 @@ def MLE_model(n, h):
     
     return theta
 
-# MAP model
 def MAP_model(n, h, a, b):
     """
     Maximum A Posteriori (MAP) model for the number of coin tosses.
