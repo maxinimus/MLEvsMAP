@@ -1,5 +1,8 @@
 import numpy as np
 
+from .run_models import run_experiments
+from src import plot_beta, plot_predictions
+
 def run_simulation(a,b,theta):
     """
     Runs the simulation for MLE and MAP estimation of a coin's bias.
@@ -13,19 +16,19 @@ def run_simulation(a,b,theta):
     None
     """
 
-    # Sample number of tosses
-    toss_counts = [10, 50, 100, 200, 300, 400, 500, 1000, 2000, 3000, 4000, 5000, 10000]
-    heads_counts = [int(tc * theta) for tc in toss_counts]  # Simulating a fair coin
+    # Generate the results of the experiments
+    toss_counts, mle_estimates, map_estimates = run_experiments(a,b,theta)
 
-    # Results storage
-    mle_estimates = []
-    map_estimates = []
+    # Plot the beta distribution
+    plot_beta(a,b)
 
-    # Run experiments
-    for n, h in zip(toss_counts, heads_counts):
-        mle_theta = MLE_model(n, h)
-        map_theta = MAP_model(n, h, a, b)
-        mle_estimates.append(mle_theta)
-        map_estimates.append(map_theta)
+    # Plot the MLE predicted probability
+    plot_predictions(toss_counts, mle_estimates)
 
-    return toss_counts, mle_estimates, map_estimates
+    # Plot the MAP predicted probability
+    plot_predictions(toss_counts, map_estimates)
+
+    return None
+
+# Run the simulation
+run_simulation(1,1,0.5)
