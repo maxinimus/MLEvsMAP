@@ -24,8 +24,29 @@ def plot_beta(a, b):
     plt.figure(figsize=(8, 4))
     plt.plot(x, y, 'r-', lw=2, alpha=0.6, label=f'Beta PDF with a={a}, b={b}')
     plt.title('Beta Distribution')
-    plt.xlabel('Probability of Heads (θ)')
-    plt.ylabel('Density')
+    plt.xlabel('Theta')
+    plt.ylabel('Probability of theta')
+    plt.legend(loc='best')
+    plt.grid(True)
+    plt.show()
+
+# plot the predicted probaiblity against the number of coin tosses.
+def plot_predictions(X, theta):
+    """
+    Plot the predicted probability of the distribution against the number of coin tosses.
+
+    Parameters:
+    X (array): Number of coin tosses.
+    theta (array): Predicted probability of the distribution.
+
+    Returns:
+    None
+    """
+    plt.figure(figsize=(8, 4))
+    plt.plot(X, theta, 'r-', lw=2, alpha=0.6, label='Predicted Probability')
+    plt.title('Predicted Probability of the Distribution')
+    plt.xlabel('Number of Coin Tosses')
+    plt.ylabel('Predicted Probability')
     plt.legend(loc='best')
     plt.grid(True)
     plt.show()
