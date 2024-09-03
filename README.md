@@ -19,7 +19,7 @@ Before you can run the simulations, make sure you have Python installed on your 
 You can install these packages using pip:
 
 ```
-pip install numpy matplotlib scipy
+pip install -r requirements.txt
 ```
 
 ## Installation
