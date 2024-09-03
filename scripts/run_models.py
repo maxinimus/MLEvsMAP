@@ -18,7 +18,7 @@ def run_experiments(a,b,theta):
     """
 
     # Sample number of tosses
-    toss_counts = np.array([10, 50, 100, 200, 300, 400, 500, 1000, 2000, 3000, 4000, 5000, 10000])
+    toss_counts = np.array(range(10, 10000, 10))
     # Generate head_counts randomly based on theta
     heads_counts = np.array([np.random.binomial(tc, theta) for tc in toss_counts])
 

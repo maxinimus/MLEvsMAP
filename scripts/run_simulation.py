@@ -1,7 +1,7 @@
 import numpy as np
 
 from .run_models import run_experiments
-from src import plot_beta, plot_predictions
+from src import plot_simulation_results
 
 def run_simulation(a,b,theta):
     """
@@ -19,16 +19,12 @@ def run_simulation(a,b,theta):
     # Generate the results of the experiments
     toss_counts, mle_estimates, map_estimates = run_experiments(a,b,theta)
 
-    # Plot the beta distribution
-    plot_beta(a,b)
-
-    # Plot the MLE predicted probability
-    plot_predictions(toss_counts, mle_estimates)
-
-    # Plot the MAP predicted probability
-    plot_predictions(toss_counts, map_estimates)
+    # Plot the results
+    plot_simulation_results(toss_counts, mle_estimates, map_estimates, a, b, theta)
 
     return None
 
-# Run the simulation
-run_simulation(1,1,0.5)
+a = 2
+b = 100
+theta = 0.5
+run_simulation(a,b,theta)
