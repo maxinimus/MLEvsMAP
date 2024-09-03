@@ -48,6 +48,18 @@ def plot_predictions(X, theta, ax, title):
     ax.set_ylim(0.0, 1.0)  # Set y-axis limits from 0.0 to 1.0
 
 def plot_simulation_results(toss_counts, mle_estimates, map_estimates, a, b, theta):
+    """
+    Plot the results of the simulation.
+
+    Parameters:
+    toss_counts (array): Number of coin tosses for each experiment.
+    mle_estimates (array): MLE estimates for given theta.
+    map_estimates (array): MAP estimates for given theta and prior.
+
+    Returns:
+    None
+    """
+
     # Setup the figure and axes
     fig, axs = plt.subplots(3, 1, figsize=(15, 9))
 
